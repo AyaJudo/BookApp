@@ -14,16 +14,19 @@ class CreateReviewsTable extends Migration
     public function up()
     {
             Schema::create('reviews', function (Blueprint $table) {
-            $table->integer('ISBN')->unique();
-            $table->integer('user_id')->unique();
-            $table->integer('rate');
-            $table->text('comment');
-            $table->timestamps();   
-
-            $table->primary(['ISBN', 'userID']);
-
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('ISBN')->references('ISBN')->on('books');
+                $table->increments('id');
+                $table->string('review');
+                $table->timestamps();
+                /*
+                 ** Creating a foreign key to users table
+                 */
+                $table->integer('user_id')->unsigned()->index();
+                $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
+                /*
+                 ** Creating a foreign key to books table
+                 */
+                $table->integer('book_id')->unsigned()->index();
+                $table->foreign('book_id')->references('id')->on('books')->onDelete('CASCADE');
         });
     }
 
