@@ -10,6 +10,9 @@
                 <div class="panel-body">
                     You are logged in!
                 </div>
+                <div class="panel-body">
+                <a href="/profile">View Your Profile</a>
+                </div>
             </div>
         </div>
     </div>
