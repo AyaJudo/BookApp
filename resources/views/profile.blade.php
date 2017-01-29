@@ -27,7 +27,12 @@
               <div class="panel-body">
                 <a href="/profile/myReviews" id="updateGenres">View Your Reviews</a>
               </div>
-                
+
+              <div class="panel-body">
+                <a href="/profile/SuggestedBooks" id="SuggestedBooks">View Suggested Books based on your preferred genre</a>
+              </div>
+
+               
           </div>
         </div>
     </div>

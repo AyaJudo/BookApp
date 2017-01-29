@@ -24,3 +24,5 @@ Route::get('/profile/myReviews', 'ProfileController@myReviews');
 Route::get('/profile/myReviews/{review}', 'ProfileController@clickedReview');
 Route::patch('/profile/myReviews/{review}/update', 'ProfileController@updateReview');
 Route::delete('/profile/myReviews/{review}/delete', 'ProfileController@deleteReview');
+Route::get('/profile/SuggestedBooks', 'ProfileController@suggestedBooks');
+Route::get('/home/TopBooks', 'HomeController@TopBooks');

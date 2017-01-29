@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+
     /**
      * Show the application dashboard.
      *
@@ -24,5 +26,17 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    
+    public function TopBooks()
+    {
+    
+        $user = \Auth::user();
+
+        $books = DB::table('books')->where('average_rating', 5)->get();
+
+        return view('TopBooks', compact('books'));
+
     }
 }
