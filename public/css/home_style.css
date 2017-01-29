@@ -1,0 +1,42 @@
+.box{
+	background: #D3D3D3;
+	float: bottom;
+	margin: 1.858736059%;
+  width: 15%;
+  text-align: center;
+   transition-property:background;
+   transition-duration: .5s;
+   transition-timing-function: linear;
+}
+.box:hover{
+	background: #ff7b29;
+}
+a{
+	background:#D3D3D3;
+	border-width: 2px;
+	border-style:groove; 
+	transition:all 1s linear;
+	text-decoration: none;
+	  cursor: pointer;
+  box-shadow: 0 5px 0 #006599;
+border-radius: 4px;
+  padding: 12px 20px;
+  border: 0;
+
+}
+a:active {
+  box-shadow: 0 10px 0 #006599;
+  transform: translateY(3px);
+}
+a:hover {
+  box-shadow: 0 5px 0 #006599;
+  transform: translateY(10px);
+}
+#basic_info{
+	
+	
+}
+body{
+	background: linear-gradient(to top,white, #000080 );
+	
+}
