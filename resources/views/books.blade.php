@@ -11,7 +11,6 @@
                 <div class="panel-body">
 	               @foreach($books as $book)
 	               <ul>
-	               <h3></h3>
 	                <a href="/books/{{ $book->id }}">{{ $book->title }}</a>
 	                <br>
 	                </ul>
