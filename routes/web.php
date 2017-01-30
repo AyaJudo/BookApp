@@ -16,9 +16,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('logout', 'HomeController@logout');
 Route::get('/home', 'HomeController@index');
-
+Route::get('/books', 'HomeController@books');
+Route::get('/books/{book}', 'HomeController@clickedBook');
+Route::post('/books/{book}/review', 'HomeController@addReview');
 Route::get('/profile', 'ProfileController@index');
 Route::patch('/profile/updateGenres', 'ProfileController@updateGenres');
 Route::get('/profile/myReviews', 'ProfileController@myReviews');

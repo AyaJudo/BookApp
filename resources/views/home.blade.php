@@ -13,6 +13,9 @@
                 <div class="panel-body">
                 <a href="/profile">View Your Profile</a>
                 </div>
+                <div class="panel-body">
+                <a href="/books">View All Books</a>
+                </div>
 
                 <div class="panel-body">
                 <a href="/home/TopBooks" id="topRated">Top Rated Books</a>
