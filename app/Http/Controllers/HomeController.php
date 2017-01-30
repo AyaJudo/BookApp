@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Book;
 use App\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
+
 
     /**
      * Show the application dashboard.
@@ -44,5 +46,17 @@ class HomeController extends Controller
         
         //$cnt = count($reviews);
          //return view('profile',$user,compact('result'));
+    }
+
+    
+    public function TopBooks()
+    {
+    
+        $user = \Auth::user();
+
+        $books = DB::table('books')->where('average_rating', 5)->get();
+
+        return view('TopBooks', compact('books'));
+
     }
 }

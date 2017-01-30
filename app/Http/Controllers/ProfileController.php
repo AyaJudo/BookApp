@@ -51,6 +51,17 @@ class ProfileController extends Controller
         return view('myReviews', compact('reviews'));
     }
 
+    public function suggestedBooks()
+    {
+    
+        $user = \Auth::user();
+
+        $books = DB::table('books')->where('genre', $user->prefered_genre)->get();
+
+        return view('suggestedBooks', compact('books'));
+
+    }
+
     public function updateReview(Request $request, Review $review)
     {
 
