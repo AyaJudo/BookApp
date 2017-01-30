@@ -31,6 +31,10 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function search()
+    {
+        return view('search');
+    }
     
     public function TopBooks()
     {
@@ -63,6 +67,12 @@ class HomeController extends Controller
             ]);
 
         return back();
+    }
+
+    public function result(Request $request){
+        $books = DB::table('books')->where('title', $request->body)->get();
+
+        return view('searchResult', compact('books'));
     }
 
 }
