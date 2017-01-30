@@ -25,27 +25,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function logout(){
-        Auth::logout();
-        redirect('login');
-    }
+    
     public function index()
     {
         return view('home');
-        //$user =auth::user();
-         
-    
-        // $reviews = Review::all();
-        // $result =array();
-
-        // foreach($reviews as $review){
-        //     if($review->user_id == $user->id)
-        //         $result =array_add($result,$review->id,$review); 
-        // }  
-    
-        
-        //$cnt = count($reviews);
-         //return view('profile',$user,compact('result'));
     }
 
     
@@ -59,4 +42,27 @@ class HomeController extends Controller
         return view('TopBooks', compact('books'));
 
     }
+
+    public function books(){
+        $books = DB::table('books')->get();
+        return view('books', compact('books'));
+    }
+
+    public function clickedbook(Book $book)
+    {
+        $reviews = DB::table('reviews')->where('book_id', $book->id)->get();
+        return view('clickedBook', compact('book', 'reviews'));
+    }
+
+    public function addReview(Request $request, Book $book){
+        $user = \Auth::user();
+        $id = DB::table('reviews')->insertGetId([
+            'review' => $request->body,
+            'book_id' => $book->id,
+            'user_id' => $user->id
+            ]);
+
+        return back();
+    }
+
 }
