@@ -9,7 +9,8 @@
 <figure> Name: {{$user->name}}</figure>
 <figure> E-mail: {{$user->email}}</figure>
 <figure>Age: {{$user->age}}</figure>
-<figure>Gender: {{$user->gender}}</figure><br></br>
+<figure>Gender: {{$user->gender}}</figure>
+<figure>Prefered Genres: {{$user->prefered_genre}}</figure><br></br>
 <a href="/profile/" id="updateGenres">Edit Your Prefered Genres</a><br>
 
 <div id="update" style="display: none;">
