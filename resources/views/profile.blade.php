@@ -29,7 +29,8 @@
 </div>
 
 
-<a href="/profile/myReviews" id="updateGenres">View Your Reviews</a>
+<a href="/profile/myReviews" id="updateGenres">View Your Reviews</a><br>
+<a href="/profile/SuggestedBooks" id="updateGenres">View Recommendations</a>
 </h2>
 </div>
 

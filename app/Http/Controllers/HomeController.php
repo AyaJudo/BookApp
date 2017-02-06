@@ -43,7 +43,7 @@ class HomeController extends Controller
 
         $books = DB::table('books')->where('average_rating', 5)->get();
 
-        return view('TopBooks', compact('books'));
+        return view('topBooks', compact('books'));
 
     }
 
